@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   headerImage: {
-    width: 100,
+    width: 130,
     height: 200,
     resizeMode: "contain",
   },

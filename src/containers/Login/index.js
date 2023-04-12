@@ -46,7 +46,7 @@ export default function Login({ navigation }) {
       setEmailErrorMessage("");
       setPasswordErrorMessage("");
 
-      navigation.navigate("Home");
+      navigation.navigate("SelectItems");
     } else {
       if (!validateEmail()) {
         setEmailErrorMessage("Please enter a valid email address");

@@ -31,12 +31,12 @@ const styles = StyleSheet.create({
   card: {
     width: "90%",
     height: 130,
-    backgroundColor: "#fff",
+    backgroundColor: Colors.white,
     borderRadius: 10,
     alignSelf: "center",
     padding: 16,
     marginVertical: 40,
-    shadowColor: "#000",
+    shadowColor: Colors.black,
     shadowOffset: {
       width: 0,
       height: 1,
