@@ -48,6 +48,10 @@ export default function SelectDateTime({ navigation }) {
     const currentDate = new Date();
     if (date.getDate() > currentDate.getDate()) {
       navigation.navigate("Success");
+    } else if (date.getMonth() > currentDate.getMonth()) {
+      navigation.navigate("Success");
+    } else if (date.getFullYear() > currentDate.getFullYear()) {
+      navigation.navigate("Success");
     } else {
       if (time.toLocaleTimeString() < currentDate.toLocaleTimeString()) {
         Alert.alert("Invalid Time", "Please select a valid time.");
