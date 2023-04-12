@@ -28,6 +28,8 @@ export default function Register({ navigation }) {
   const [emailErrorMessage, setEmailErrorMessage] = useState("");
   const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
   const [mobileErrorMessage, setMobileErrorMessage] = useState("");
+  const [nameErrorMessage, setNameErrorMessage] = useState("");
+  const [addressErrorMessage, setAddressErrorMessage] = useState("");
 
   //eye icon to hide or showing password
   const handleEyeIcons = () => {
@@ -67,6 +69,8 @@ export default function Register({ navigation }) {
       setEmailErrorMessage("");
       setPasswordErrorMessage("");
       setMobileErrorMessage("");
+      setNameErrorMessage("");
+      setAddressErrorMessage("");
       Alert.alert("Sanspots", "Registration Successful!", [
         { text: "OK", onPress: () => navigation.navigate("Login") },
       ]);
@@ -85,6 +89,16 @@ export default function Register({ navigation }) {
         setMobileErrorMessage("Please enter a valid mobile number");
       } else {
         setMobileErrorMessage("");
+      }
+      if (!name) {
+        setNameErrorMessage("Fill your name");
+      } else {
+        setNameErrorMessage("");
+      }
+      if (!address) {
+        setAddressErrorMessage("Fill your address");
+      } else {
+        setAddressErrorMessage("");
       }
     }
   };
@@ -105,7 +119,9 @@ export default function Register({ navigation }) {
           onChangeText={setName}
           style={{ fontSize: 18 }}
         />
-        {!name ? <Text style={styles.errorMessage}>Fill Name</Text> : null}
+        {nameErrorMessage ? (
+          <Text style={styles.errorMessage}>{nameErrorMessage}</Text>
+        ) : null}
       </View>
 
       <View style={styles.labelInputBoxWrapper}>
@@ -142,8 +158,8 @@ export default function Register({ navigation }) {
           onChangeText={setAddress}
           style={{ fontSize: 18 }}
         />
-        {!address ? (
-          <Text style={styles.errorMessage}>Fill Address</Text>
+        {addressErrorMessage ? (
+          <Text style={styles.errorMessage}>{addressErrorMessage}</Text>
         ) : null}
       </View>
 
