@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.abhaybhandari.sanspots"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e777fa0f-e701-4552-a944-4bbf34f441d2"
+      }
+    },
+    "owner": "abhaybhandari"
   }
 }
