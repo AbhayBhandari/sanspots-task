@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  StatusBar,
+} from "react-native";
 import React, { useState } from "react";
 import * as Animatable from "react-native-animatable";
 
@@ -63,6 +70,13 @@ export default function Login({ navigation }) {
 
   return (
     <View style={styles.container}>
+      
+      <StatusBar
+        animated={true}
+        backgroundColor={Colors.primary}
+        barStyle="light-content"
+      />
+
       <View style={styles.header}>
         <Animatable.Image
           animation="bounceIn"
