@@ -117,7 +117,13 @@ export default function Login({ navigation }) {
           <Text style={styles.errorMessage}>{passwordErrorMessage}</Text>
         ) : null}
 
-        <TouchableOpacity onPress={() => console.log("Forgot Password")}>
+        <TouchableOpacity
+          onPress={() =>
+            alert(
+              "Just put a valid email and password. You will able to login successfully."
+            )
+          }
+        >
           <Text
             style={{
               textAlign: "right",
