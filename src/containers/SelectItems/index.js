@@ -1,4 +1,11 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  StatusBar,
+} from "react-native";
 import React, { useState } from "react";
 
 import Colors from "../../utils/Colors";
@@ -23,8 +30,13 @@ export default function SelectItems({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <StatusBar
+        backgroundColor={Colors.white}
+        barStyle="dark-content"
+      />
+
       <TouchableOpacity
-        style={{ left: 20, top: 20 }}
+        style={{ left: 20, marginTop: 50 }}
         onPress={() => navigation.navigate("Login")}
       >
         <Icon name="arrow-back-circle" size={35} color={Colors.primary} />
@@ -45,15 +57,22 @@ export default function SelectItems({ navigation }) {
         isChecked={isChecked}
         onPress={handleCheckboxClick}
       />
-      <AppButton title="Confirm" onPress={handleConfirm} />
+      <View style={styles.buttonPosition}>
+        <AppButton title="Confirm" onPress={handleConfirm} />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  buttonPosition: {
+    position: "absolute",
+    bottom: 20,
+    left: 0,
+    right: 0,
+  },
   container: {
     flex: 1,
-    marginTop: 30,
     backgroundColor: Colors.white,
   },
   header: {
@@ -61,7 +80,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     marginTop: 20,
-    marginHorizontal: 10,
+    marginHorizontal: 20,
   },
   headerImage: {
     width: 130,
@@ -75,6 +94,7 @@ const styles = StyleSheet.create({
     fontSize: 50,
   },
   itemTypeText: {
+    marginTop: 20,
     alignSelf: "center",
     fontSize: 23,
     color: Colors.darkGrey,

@@ -5,6 +5,7 @@ import {
   Image,
   TouchableOpacity,
   Alert,
+  StatusBar,
 } from "react-native";
 import React, { useState } from "react";
 import * as Animatable from "react-native-animatable";
@@ -63,6 +64,11 @@ export default function SelectDateTime({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <StatusBar
+        backgroundColor={Colors.primary}
+        barStyle="light-content"
+      />
+
       <View style={styles.header}>
         <Animatable.Image
           animation="bounceIn"
@@ -131,7 +137,7 @@ export default function SelectDateTime({ navigation }) {
           </TouchableOpacity>
         </View>
 
-        <View style={{ position: "absolute", bottom: 20, left: 0, right: 0 }}>
+        <View style={styles.buttonPosition}>
           <AppButton title="Confirm & Continue" onPress={handleConfirm} />
         </View>
       </Animatable.View>
@@ -140,6 +146,12 @@ export default function SelectDateTime({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  buttonPosition: {
+    position: "absolute",
+    bottom: 20,
+    left: 0,
+    right: 0,
+  },
   container: {
     flex: 1,
     backgroundColor: Colors.primary,

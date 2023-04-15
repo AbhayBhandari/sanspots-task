@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, StatusBar } from "react-native";
 import React from "react";
 import { Image } from "react-native";
 
@@ -9,6 +9,12 @@ import * as Animatable from "react-native-animatable";
 export default function Success({ navigation }) {
   return (
     <View style={styles.container}>
+
+      <StatusBar
+        backgroundColor={Colors.primary}
+        barStyle="light-content"
+      />
+
       <View style={{ flex: 1, backgroundColor: Colors.primary }}>
         <Image
           source={require("../../assets/images/sanspots.png")}

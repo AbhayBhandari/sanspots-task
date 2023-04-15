@@ -5,6 +5,7 @@ import {
   View,
   Alert,
   TouchableOpacity,
+  StatusBar,
 } from "react-native";
 import React, { useState } from "react";
 
@@ -105,6 +106,12 @@ export default function Register({ navigation }) {
 
   return (
     <View style={styles.container}>
+
+      <StatusBar
+        backgroundColor={Colors.white}
+        barStyle="dark-content"
+      />
+
       <Image
         source={require("../../assets/images/sanspots-gradient.png")}
         style={styles.headerImage}
@@ -190,6 +197,7 @@ export default function Register({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: Colors.white,
   },
   headerImage: {
     width: 250,

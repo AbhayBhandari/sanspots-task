@@ -70,9 +70,8 @@ export default function Login({ navigation }) {
 
   return (
     <View style={styles.container}>
-      
+
       <StatusBar
-        animated={true}
         backgroundColor={Colors.primary}
         barStyle="light-content"
       />
